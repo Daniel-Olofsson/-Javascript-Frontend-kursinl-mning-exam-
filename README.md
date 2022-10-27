@@ -1,1 +1,1 @@
-# -Javascript-Frontend-kursinl-mning-exam-
+# Javascript-Frontend-kursinl-mning-exam-
