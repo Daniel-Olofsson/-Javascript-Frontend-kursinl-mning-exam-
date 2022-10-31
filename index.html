@@ -12,19 +12,45 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content" id="modalcontent">
+        <span class="close">&times;</span>
+        
+      </div>
+    
+    </div>
+    <ul class="navcontainer">
+      <li><a class="active" href="#home">Home</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+
+    <aside>
+      <h1>
+        Make your own Foodinator List!
+      </h1>
+    </aside>
+
     <div class="container">
       <div class="search-container">
         <input
           type="text"
-          placeholder="Type a cocktail name..."
+          placeholder="Type a meal name..."
           id="user-inp"
           value="margarita"
         />
-        <button id="search-btn">Search</button>
+        <button id="search-btn">Add To List!</button>
       </div>
       <div id="result"></div>
+      <button id="myBtn">Shopping-List!</button>
+
     </div>
     <!-- Script -->
     <script src="js/script.js"></script>
+    <script src="js/modal.js"></script>
   </body>
 </html>
