@@ -24,7 +24,7 @@ let getInfo = () => {
             console.log(myRandomMeal.strArea);
             var counter = 20;
             for(var i = 0; i < counter; i++){
-                randomresult.innerHTML = `
+                randomresult.innerHTML += `
                 <img src=${myRandomMeal.strMealThumb}>
                 <h2>${myRandomMeal.strMeal}</h2>
                 <h2>Youtube:</h2>
