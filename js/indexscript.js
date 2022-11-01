@@ -32,6 +32,16 @@ let getInfo = () => {
             ingredients.push(`${measure} ${ingredient}`);
           }
         }
+        // modal
+        document.cookie = `cart=${ingredients}; expires=Thu, 18 Dec 2023 12:00:00 UTC; path=/`;
+        
+
+
+        //local storage for recipe list
+        localStorage.setItem("Varukorg", ingredients);
+        document.getElementById('modalcontent').innerHTML += localStorage.getItem("Varukorg");
+
+
         console.log(ingredients);
         result.innerHTML = `
       <img src=${myMeal.strMealThumb}>
@@ -51,13 +61,6 @@ let getInfo = () => {
           ingredientsCon.appendChild(listItem);
           //display modal button
           document.getElementById("myBtn").style.display = "block";
-          
-          let modal_text = document.createElement('p');
-          
-          
-          document.getElementById('modalcontent').appendChild(modal_text);
-          
-          modal_text.innerHTML = item;
         });
         
       })
