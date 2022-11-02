@@ -22,7 +22,7 @@ let getInfo = () => {
             console.log(myRandomMeal.strMealThumb);
             console.log(myRandomMeal.strYoutube);
             console.log(myRandomMeal.strArea);
-            var counter = 20;
+            var counter = 1;
             for(var i = 0; i < counter; i++){
                 randomresult.innerHTML += `
                 <img src=${myRandomMeal.strMealThumb}>
@@ -40,7 +40,9 @@ let getInfo = () => {
         })
 
 }
-
+for (let i = 0; i < 20; i++) {
+    getInfo();
+  }
 
 window.addEventListener("load", getInfo);
 random_searchbtn.addEventListener("click", getInfo);

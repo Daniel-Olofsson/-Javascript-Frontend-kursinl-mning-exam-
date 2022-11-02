@@ -40,7 +40,8 @@ let getInfo = () => {
         //local storage for recipe list
         localStorage.setItem("Varukorg", ingredients);
         document.getElementById('modalcontent').innerHTML += localStorage.getItem("Varukorg");
-
+        console.log(localStorage.getItem("Varukorg"));
+        console.log("hello");
 
         console.log(ingredients);
         result.innerHTML = `
@@ -48,7 +49,7 @@ let getInfo = () => {
       <h2>${myMeal.strMeal}</h2>
       <h3>Ingredients:</h3>
       <ul class="ingredients"></ul>
-      <h3>Instructions:</h3>
+      <h3>Instructions:</h3>  
       <p>${myMeal.strInstructions}</p>
       `;
         let modal_titel = document.createElement('h1');
@@ -60,7 +61,7 @@ let getInfo = () => {
           listItem.innerText = item;
           ingredientsCon.appendChild(listItem);
           //display modal button
-          document.getElementById("myBtn").style.display = "block";
+          //document.getElementById("myBtn").style.display = "block";
         });
         
       })
@@ -85,7 +86,7 @@ var modalcontainer = document.getElementsByClassName("modal-content");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-document.getElementById("myBtn").style.display = "none";
+
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
   modal.style.display = "block";
