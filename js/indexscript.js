@@ -33,15 +33,23 @@ let getInfo = () => {
           }
         }
         // modal
-        document.cookie = `cart=${ingredients}; expires=Thu, 18 Dec 2023 12:00:00 UTC; path=/`;
-        
-
+        document.cookie = `cart=${ingredients} "SameSite=None"; expires=Thu, 18 Dec 2023 12:00:00 UTC; path=/`;
+        allCookies = document.cookie;
+        let modal_titel = document.createElement('h1');
+        document.getElementById('modalcontent').appendChild(modal_titel);
+        modal_titel.innerHTML = myMeal.strMeal;
 
         //local storage for recipe list
-        localStorage.setItem("Varukorg", ingredients);
-        document.getElementById('modalcontent').innerHTML += localStorage.getItem("Varukorg");
-        console.log(localStorage.getItem("Varukorg"));
+        localStorage.setItem('Varukorg',ingredients);
+        let storageData = localStorage.getItem('Varukorg');
+        document.getElementById('modalcontent').innerHTML += storageData; //not working!!!!
+        
+        
+        //log
+        
         console.log("hello");
+        console.log(allCookies);
+        console.log(storageData);
 
         console.log(ingredients);
         result.innerHTML = `
@@ -52,9 +60,7 @@ let getInfo = () => {
       <h3>Instructions:</h3>  
       <p>${myMeal.strInstructions}</p>
       `;
-        let modal_titel = document.createElement('h1');
-        document.getElementById('modalcontent').appendChild(modal_titel);
-        modal_titel.innerHTML = myMeal.strMeal;
+        
         let ingredientsCon = document.querySelector(".ingredients");
         ingredients.forEach((item) => {
           let listItem = document.createElement("li");

@@ -6,7 +6,7 @@
   }
   body {
     min-height: 80vh;
-    background: linear-gradient(#19349f 50%, #b71414 50%);
+    background: linear-gradient(to left, #333, #333 50%, #eee 75%, #333 75%);
   }
   .container {
     position: absolute;
@@ -47,7 +47,7 @@
     cursor: pointer;
   }
   #result {
-    color: #575a7b;
+    color: #577b59;
     line-height: 2em;
     
   }
@@ -152,7 +152,9 @@
     font-size: 28px;
     font-weight: bold;
   }
-  
+  #randomresult{
+    color:#026c08;
+  }
   .close:hover,
   .close:focus {
     color: #000;

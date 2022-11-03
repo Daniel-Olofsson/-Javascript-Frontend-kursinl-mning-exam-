@@ -25,7 +25,7 @@ let getInfo = () => {
             var counter = 1;
             for(var i = 0; i < counter; i++){
                 randomresult.innerHTML += `
-                <img src=${myRandomMeal.strMealThumb}>
+                <img src=${myRandomMeal.strMealThumb} class="img-fluid img-thumbnail" style="heigth:10:%; width: 10%;">
                 <h2>${myRandomMeal.strMeal}</h2>
                 <h2>Youtube:</h2>
                 <a href="${myRandomMeal.strYoutube}" target="_blank">Visit tutorial!</a> 
