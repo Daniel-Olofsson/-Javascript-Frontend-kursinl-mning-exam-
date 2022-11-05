@@ -33,24 +33,16 @@ let getInfo = () => {
           }
         }
         // modal
-        document.cookie = `cart=${ingredients} "SameSite=None"; expires=Thu, 18 Dec 2023 12:00:00 UTC; path=/`;
-        allCookies = document.cookie;
+        //document.cookie = `cart=${ingredients} "SameSite=None"; expires=Thu, 18 Dec 2023 12:00:00 UTC; path=/`;
+        //allCookies += document.cookie;
         let modal_titel = document.createElement('h1');
         document.getElementById('modalcontent').appendChild(modal_titel);
         modal_titel.innerHTML = myMeal.strMeal;
-
         //local storage for recipe list
+        const storageData = localStorage.getItem('Varukorg');
+        document.getElementById('modalcontent').innerHTML += storageData;
         localStorage.setItem('Varukorg',ingredients);
-        let storageData = localStorage.getItem('Varukorg');
-        document.getElementById('modalcontent').innerHTML += storageData; //not working!!!!
-        
-        
-        //log
-        
-        console.log("hello");
-        console.log(allCookies);
         console.log(storageData);
-
         console.log(ingredients);
         result.innerHTML = `
       <img src=${myMeal.strMealThumb}>
@@ -72,39 +64,28 @@ let getInfo = () => {
         
       })
       .catch(() => {
-        result.innerHTML = `<h3 class="msg">Please enter a valid input</h3>`;
+        result.innerHTML = `<h3 class="msg">Please enter a valid recipe</h3>`;
       });
   }
 };
 window.addEventListener("load", getInfo);
 searchBtn.addEventListener("click", getInfo);
 
-
-
-
-
 // Get the modal
 var modal = document.getElementById("myModal");
-
 // Get the button that opens the modal
 var btn = document.getElementById("myBtn");
 var modalcontainer = document.getElementsByClassName("modal-content");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
-
-
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
   modal.style.display = "block";
-  
-  
 }
-
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";
 }
-
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {

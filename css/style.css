@@ -161,6 +161,10 @@
     text-decoration: none;
     cursor: pointer;
   }
+
+#cookbookDiv{
+  color: #026c08;
+}
   @media screen and (max-width: 667px) {
     .container {
       font-size: 8px;
