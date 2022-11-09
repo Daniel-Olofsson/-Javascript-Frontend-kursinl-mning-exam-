@@ -14,26 +14,38 @@ let getInfo = () => {
             //random obj with prop
             console.log(data.meals[0]);
             //list for obj
-            let myRandomMeal = data.meals[0]
+            let myRandomMeal = data.meals[0];
+            
             //log the prob selected prob
             console.log(myRandomMeal.strMeal);
             console.log(myRandomMeal.strCategory);
             console.log(myRandomMeal.strTags);
+            console.log(myRandomMeal.strSource)
             console.log(myRandomMeal.strMealThumb);
             console.log(myRandomMeal.strYoutube);
             console.log(myRandomMeal.strArea);
-            var counter = 1;
-            for(var i = 0; i < counter; i++){
-                randomresult.innerHTML += `
+            //
+            
+            for(let i = 0; i<1; i++){
+                let text = "";
+
+                text += `<div class="card">
+                <div class=card-header>${myRandomMeal.strMeal}</div>
+                <h2>Source: ${myRandomMeal.strSource}</h2>
                 <img src=${myRandomMeal.strMealThumb} class="img-fluid img-thumbnail" style="heigth:10:%; width: 10%;">
-                <h2>${myRandomMeal.strMeal}</h2>
-                <h2>Youtube:</h2>
-                <a href="${myRandomMeal.strYoutube}" target="_blank">Visit tutorial!</a> 
-                <h2>Tags:</h2>
-                <h2>${myRandomMeal.strTags}</h2>
-                <h2>Category:</h2>
-                <h2>${myRandomMeal.strCategory}</h2>
+                <a href="${myRandomMeal.strYoutube}" target="_blank">Youtube tutorial</a>
+                <h2>Category: ${myRandomMeal.strCategory}</h2> 
                 `;
+                if(myRandomMeal.strTags != null){
+                  text += `<h2>Tags: ${myRandomMeal.strTags}</h2>
+                  </div>`
+                }
+                else {
+                  text += `</div>`
+                }
+                
+                randomresult.innerHTML += text;
+
             }
 
 
