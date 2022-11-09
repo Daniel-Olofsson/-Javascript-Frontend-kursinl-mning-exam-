@@ -8,6 +8,13 @@
     min-height: 80vh;
     background: linear-gradient(to left, #333, #333 50%, #eee 75%, #333 75%);
   }
+  aside{
+    float: right;
+    background-color: #026c08;
+    width: 25%;
+    height: 100%;
+    border-left: 1px #ccc solid;
+  }
   .container {
     position: absolute;
     transform: translate(-50%, -50%);
