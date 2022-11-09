@@ -1,9 +1,10 @@
 let result = document.getElementById("result");
 let searchBtn = document.getElementById("search-btn");
 let recipeName = document.getElementById("recipe-name");
+let deleteBtn = document.getElementById("delete-btn");
 let url = "https://themealdb.com/api/json/v1/1/search.php?s=";
 
-let varukorg = [];
+let shoppingCart = [];
 
 let getInfo = () => {
   let userInp = document.getElementById("user-inp").value;
@@ -18,7 +19,7 @@ let getInfo = () => {
         console.log(data.meals[0]);
         let myMeal = data.meals[0];
 
-        varukorg.push(myMeal);
+        shoppingCart.push(myMeal);
 
         console.log(myMeal.strMeal);
         console.log(myMeal.strMealThumb);
@@ -40,7 +41,7 @@ let getInfo = () => {
           }
         }
 
-        console.log(varukorg);
+        console.log(shoppingCart);
    
         //document.cookie = `cart=${ingredients} "SameSite=None"; expires=Thu, 18 Dec 2023 12:00:00 UTC; path=/`;
         //allCookies += document.cookie;
@@ -81,9 +82,9 @@ let getInfo = () => {
 function displayVarukorg(){
   recipeName.innerHTML = "";
 
-  for (i=0; i<varukorg.length; i++)
+  for (i=0; i<shoppingCart.length; i++)
   {
-    var myMeal = varukorg[i];
+    var myMeal = shoppingCart[i];
 
     let count = 1;
     let ingredients = [];
@@ -114,5 +115,10 @@ function displayVarukorg(){
 
 }
 
+function deleteCart(){
+    shoppingCart.pop();
+    displayVarukorg();
+}
+deleteBtn.addEventListener("click", deleteCart)
 window.addEventListener("load", getInfo);
 searchBtn.addEventListener("click", getInfo);
