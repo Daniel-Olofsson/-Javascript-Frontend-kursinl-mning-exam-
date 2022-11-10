@@ -31,8 +31,8 @@ let getInfo = () => {
 
                 text += `<div class="card">
                 <div class=card-header>${myRandomMeal.strMeal}</div>
-                <h2>Source: ${myRandomMeal.strSource}</h2>
                 <img src=${myRandomMeal.strMealThumb} class="img-fluid img-thumbnail" style="heigth:10:%; width: 10%;">
+                <h2>Source: ${myRandomMeal.strSource}</h2>
                 <a href="${myRandomMeal.strYoutube}" target="_blank">Youtube tutorial</a>
                 <h2>Category: ${myRandomMeal.strCategory}</h2> 
                 `;
@@ -52,9 +52,11 @@ let getInfo = () => {
         })
 
 }
+function randomRecipes(){
 for (let i = 0; i < 20; i++) {
     getInfo();
   }
+}
 
 window.addEventListener("load", getInfo);
-random_searchbtn.addEventListener("click", getInfo);
+random_searchbtn.addEventListener("click", randomRecipes);
