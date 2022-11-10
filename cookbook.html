@@ -21,43 +21,82 @@
       <li><a href="cookbook.html">CookBook</a></li>
     </ul>
 <!--Nav bar-->
-
-
-
-
-
-
-
 <main>
     
-
+    <h1>USE THE BUTTONS AND A VALID INPUT IN THE FOUR FIELDS BELOW TO PUT</h1>
     <div class="input-group mb-3">
-      <button class="btn btn-outline-secondary" type="button" id="button-addon1">Post ID</button>
-      <input type="text" class="form-control" placeholder="post id" aria-label="Recipient's username" aria-describedby="button-addon1" value="" id="input-id">
+      <button class="btn btn-outline-secondary" type="button" id="button-addon1">Put ID</button>
+      <input type="text" class="form-control" placeholder="Only numbers" aria-label="put id" aria-describedby="button-addon1" value="" id="input-id">
     </div>
 
     <div class="input-group mb-3">
-      <button class="btn btn-outline-secondary" type="button" id="button-addon2">Post titel</button>
-      <input type="text" class="form-control" placeholder="post titel" aria-label="Example text with button addon" aria-describedby="button-addon1" value="" id="input-titel">
+      <button class="btn btn-outline-secondary" type="button" id="button-addon2">Put titel</button>
+      <input type="text" class="form-control" placeholder="post titel" aria-label="put titel" aria-describedby="button-addon1" value="" id="input-titel">
     </div>
   
     <div class="input-group mb-3">
-      <button class="btn btn-outline-secondary" type="button" id="button-addon3">Post body</button>
-      <input type="text" class="form-control" placeholder="post body" aria-label="Example text with two button addons" value="" id="input-body">
+      <button class="btn btn-outline-secondary" type="button" id="button-addon3">Put body</button>
+      <input type="text" class="form-control" placeholder="post body" aria-label="put body" value="" id="input-body">
     </div>
     
     <div class="input-group">
-      <button class="btn btn-outline-secondary" type="button" id="button-addon4">Post userID</button>
-      <input type="text" class="form-control" placeholder="post userID" aria-label="Recipient's username with two button addons" value="" id="input-userid">
+      <button class="btn btn-outline-secondary" type="button" id="button-addon4">Put userID</button>
+      <input type="text" class="form-control" placeholder="post userID" aria-label="put userID" value="" id="input-userid">
     </div>
     <div id="cookbookDiv" style="width:50%;height:500px;line-height:3em;overflow:auto;padding:5px; float: right;">
 
     </div>
+    <!--left float-->
     <div id="cookbookDivleft" style="width:50%;height:500px;line-height:3em;overflow:auto;padding:5px; float: left;">
-
+      <h1>HERE YOU POST</h1>
+      <form>
+        <div class="form-row">
+          <div class="col-4">
+            <button class="btn btn-outline-primary" type="button" id="button-addon6">Post Titel</button>
+            <input type="text" class="form-control" placeholder="Post Titel" id="post-input-titel" value="">
+          </div>
+          <div class="col">
+            <button class="btn btn-outline-primary" type="button" id="button-addon7">Post Body</button>
+            <input type="text" class="form-control" placeholder="Post Body" id="post-input-body" value="">
+          </div>
+          <div class="col">
+            <button class="btn btn-outline-primary" type="button" id="button-addon8">Post UserID</button>
+            <input type="text" class="form-control" placeholder="Post UserID" id="post-input-userid" value="">
+          </div>
+        </div>
+      </form>
+      <h1>HERE YOU PATCH</h1>
+      <form>
+        <div class="form-row">
+          <div class="col-3">
+            <button class="btn btn-outline-primary" type="button" id="button-addon5">Patch ID</button>
+            <input type="text" class="form-control" placeholder="Patch ID" id="patch-input-id" value="">
+          </div>
+          <div class="col">
+            <button class="btn btn-outline-primary" type="button" id="button-addon9">Patch Titel</button>
+            <input type="text" class="form-control" placeholder="Patch Titel" id="patch-input-titel" value="">
+          </div>
+          <div class="col">
+            <button class="btn btn-outline-primary" type="button" id="button-addon10">Patch Body</button>
+            <input type="text" class="form-control" placeholder="Patch Body" id="patch-input-body" value="">
+          </div>
+          <div class="col">
+            <button class="btn btn-outline-primary" type="button" id="button-addon11">Patch UserID</button>
+            <input type="text" class="form-control" placeholder="Patch UserID" id="patch-input-userid" value="">
+          </div>
+        </div>
+      </form>
+      <h1>HERE YOU DELETE</h1>
+      <form>
+        <div class="form-row">
+          <div class="col-4">
+            <button class="btn btn-outline-primary" type="button" id="button-addon12">Delete ID</button>
+            <input type="text" class="form-control" placeholder="Delete ID, ONLY NUMBERS" id="delete-input-titel" value="">
+          </div>
+        </div>
+      </form>
     </div>
 </main>
-
 <!-- Script -->
 <script src="js/bookscript.js"></script>
 </body>
