@@ -6,7 +6,7 @@
   }
   body {
     min-height: 80vh;
-    background: linear-gradient(to left, #333, #333 50%, #eee 75%, #333 75%);
+    background: linear-gradient(to left, #333, #333 50%, rgb(22, 4, 143) 75%, #333 75%);
   }
   aside{
     float: right;

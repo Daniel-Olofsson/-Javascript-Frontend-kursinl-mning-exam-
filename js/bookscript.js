@@ -123,14 +123,28 @@ let patchInfo = () => {
   } );
 
 }
+let deleteIdValue = document.getElementById('delete-input-id').value;
+let deleteInfo = async () => {
+try {
+  const response = await fetch('https://jsonplaceholder.typicode.com/posts/' +deleteIdValue, {
+    method: "delete"
+  });
 
-let deleteInfo = () => {
-  let deleteIdValue = document.getElementById('delete-input-id').value;
-  fetch('https://jsonplaceholder.typicode.com/posts/' + deleteIdValue, {
-  method: 'DELETE',
-});
+  if (!response.ok) {
+    const message = 'Error with Status Code: ' + response.status;
+    throw new Error(message);
+  }
+
+  const data = await response.json();
+  console.log(data);
+  console.log(response);
+  cookbookDiv.innerHTML += `<hr> Status text: ` + data
+} catch (error) {
+  console.log('Error: ' + error);
+}
 
 }
+
 
 
 
